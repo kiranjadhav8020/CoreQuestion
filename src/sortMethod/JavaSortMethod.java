@@ -27,8 +27,21 @@ public class JavaSortMethod {
 
         // write a program to find the sum of salaries of all the employee using stream api
 
-        Double total=employeeLIst.stream().map(employee -> employee.getSalary()).reduce(0.0,(e1,e2)-> e1+e2);
+        Double total=employeeLIst.stream().map(Employee::getSalary).reduce(0.0,(e1,e2)-> e1+e2);
         System.out.println(total);
+
+        // Write a program to print Employee in assending order based on his name
+
+        employeeLIst.stream().sorted(Comparator.comparing(Employee::getName)).forEach(System.out::println);
+
+        // find the employee and change the company for emp whoes salary is 25k
+
+        employeeLIst.stream().filter(employee -> employee.getSalary()>=25000).peek(emp-> emp.setCompanyName("IBM")).forEach(System.out::println);
+
+       //  write a program to print the first letter as small Letter
+        employeeLIst.stream().map(emp-> emp.getName().toLowerCase()).forEach(System.out::println);
+
+
     }
 
 }
