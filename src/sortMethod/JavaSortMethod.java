@@ -15,7 +15,7 @@ public class JavaSortMethod {
         Employee e4=new Employee(4,"Amol","LTI",25000);
         */
         List<Employee> employeeLIst= Arrays.asList(
-                new Employee(1,"kiran","Persistent",20000),
+                new Employee(1,"Kiran","Persistent",20000),
                 new Employee(2,"Rohit","GOV",10000),
                 new Employee(3,"Rahul","SIRA",24000),
                 new Employee(4,"Amol","LTI",25000)
@@ -40,6 +40,9 @@ public class JavaSortMethod {
 
        //  write a program to print the first letter as small Letter
         employeeLIst.stream().map(emp-> emp.getName().toLowerCase()).forEach(System.out::println);
+
+        // Write a program to check which name is starting as a K first letter
+        employeeLIst.stream().filter(emp-> emp.getName().startsWith("K")).forEach(System.out::println);
 
 
     }
